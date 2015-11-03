@@ -6,9 +6,9 @@ RUN apt-get -y install wget && \
     apt-get update && \
     apt-get install -y rackspace-monitoring-agent
 
-COPY run.sh /run.sh
 COPY my_fs.yaml /etc/rackspace-monitoring-agent.conf.d/my_fs.yaml
-CMD chmod +x /run.sh
 
-ENTRYPOINT ['/run.sh']
+COPY run.sh ./run.sh
+RUN chmod +x ./run.sh
 
+ENTRYPOINT ["./run.sh"]
