@@ -1,0 +1,11 @@
+type                  : remote.ping
+label                 : Simple ping check
+disabled              : false
+period                : 60
+timeout               : 30
+target_hostname       : 127.0.0.1
+monitoring_zones_poll : mzdfw 
+alarms                :
+    defaultAlarm   :
+        label                 : ping alarm
+        notification_plan_id  : npSomething
